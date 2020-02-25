@@ -9,6 +9,7 @@ namespace Application.Tests.Payment
     public class SafePaymentTests
     {
         [TestMethod]
+        [Timeout(300)]
         public void SuccessPay()
         {
             // Arrange

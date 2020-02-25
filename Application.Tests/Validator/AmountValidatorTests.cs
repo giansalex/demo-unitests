@@ -1,4 +1,5 @@
-﻿using Application.Lib.Validator;
+﻿using System;
+using Application.Lib.Validator;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Application.Tests.Validator
@@ -6,12 +7,14 @@ namespace Application.Tests.Validator
     [TestClass]
     public class AmountValidatorTests
     {
-        [TestMethod]
-        public void ValidAmount()
+        [DataTestMethod]
+        [DataRow(20)]
+        [DataRow(40.0)]
+        public void ValidAmount(object argument)
         {
             // Arrange
             var validator = new AmountValidator();
-            var amount = 10M;
+            var amount = Convert.ToDecimal(argument);
 
             // Act
             var result = validator.Valid(amount);
