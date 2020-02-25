@@ -41,6 +41,7 @@ namespace Application.Tests.Payment
             // Assert
             Mock.Get(mock).Verify(m => m.Valid(amount));
             Assert.IsFalse(result.Success);
+            // StringAssert.Contains(result.Message, "Invalid");
         }
     }
 }

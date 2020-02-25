@@ -1,5 +1,8 @@
-﻿namespace Application.Lib.Payment
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Application.Lib.Payment
 {
+    [ExcludeFromCodeCoverage]
     public class PaymentResult
     {
         public bool Success { get; set; }
